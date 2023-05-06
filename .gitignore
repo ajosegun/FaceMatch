@@ -1,2 +1,3 @@
 venv
 vgg_face_model.h5
+__pycache__
