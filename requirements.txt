@@ -1,8 +1,8 @@
-streamlit
-streamlit-webrtc 
-opencv-python
 cmake
+streamlit
+opencv-python
 dlib
 tensorflow
 numpy
 gdown
+cmake
