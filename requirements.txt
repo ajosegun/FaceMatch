@@ -1,8 +1,7 @@
-cmake
 streamlit
 opencv-python
+cmake
 dlib
 tensorflow
 numpy
 gdown
-cmake
