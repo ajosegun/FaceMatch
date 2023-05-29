@@ -4,6 +4,7 @@ import argparse
 import time
 import cv2
 import os
+import psutil
 
 import tensorflow as tf
 from tensorflow import keras
@@ -141,3 +142,30 @@ def predict_frame(frame):
                             cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 1, cv2.LINE_AA)
 
         return frame
+
+
+ 
+def get_system_info():
+
+
+    # Get CPU information
+    cpu_count = psutil.cpu_count(logical=False)  # Number of physical CPUs
+    cpu_threads = psutil.cpu_count(logical=True)  # Number of logical CPUs
+    
+    # Get RAM information
+    ram_total = psutil.virtual_memory().total  # Total RAM in bytes
+    
+    # Get disk information
+    disk_usage = psutil.disk_usage('/')  # Disk usage of the root directory
+    disk_total = disk_usage.total  # Total disk space in bytes
+    disk_used = disk_usage.used  # Used disk space in bytes
+    
+    # Print the information
+    #print(f"CPU Count: {cpu_count}")
+    #print(f"CPU Threads: {cpu_threads}")
+    #print(f"Total RAM: {ram_total / (1024**3):.2f} GB")
+    #print(f"Total Disk Space: {disk_total / (1024**3):.2f} GB")
+    #print(f"Used Disk Space: {disk_used / (1024**3):.2f} GB")
+    
+    return f'System info: {cpu_threads} Threads, {cpu_count} CPUs, {ram_total / (1024**3):.2f} GB, {disk_used / (1024**3):.2f}/{disk_total / (1024**3):.2f} GB'
+

@@ -4,7 +4,7 @@ import numpy as np
 import helper
 
 # Create a VideoCapture object to capture video from the default camera
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0) 
 
 # Set the resolution of the camera
 cap.set(3, 640)
@@ -16,6 +16,7 @@ def get_frame():
 
 # Display the live video stream using Streamlit
 st.title('Live Camera Stream')
+st.write(helper.get_system_info())
 run = st.checkbox('Run')
 if run:
     stframe = st.empty()

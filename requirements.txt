@@ -5,3 +5,4 @@ dlib
 tensorflow
 numpy
 gdown
+psutil
